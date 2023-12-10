@@ -1,33 +1,17 @@
-let currentImage = 1;
-
-$('#next').click(function() {
- if (currentImage < 3) {
-    currentImage++;
- }
- updateImage();
-});
-
-$('#prev').click(function() {
- if (currentImage > 1) {
-    currentImage--;
- }
- updateImage();
-});
-
-function updateImage() {
- $('#image-container img').hide();
- $('#img' + currentImage).show();
-}
-
-function openModal(img) {
+document.addEventListener("DOMContentLoaded", function () {
     var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var span = document.getElementsByClassName("close")[0];
-    
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    
-    span.onclick = function() { 
-        modal.style.display = "none";
-    }
-}
+    var modalContent = document.getElementById("modalContent");
+    var modalImage = document.getElementById("modalImage");
+  
+    // Mostrar el modal
+    modal.style.display = "flex";
+  
+    // Obtener las dimensiones de la imagen
+    var imageWidth = modalImage.width;
+    var imageHeight = modalImage.height;
+  
+    // Establecer el tamaño del modal según las dimensiones de la imagen
+    modalContent.style.width = imageWidth + "px";
+    modalContent.style.height = imageHeight + "px";
+  });
+  
